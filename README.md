@@ -2,7 +2,7 @@
 ### OS : ubuntu 20.04, 22.04
 ### k8s : 1.24.6
 ### cni : flannel
-### cri : docker latest
+### cri : containerd v1.6.8
 ### kubespray : release-2.20
 -------------------------------
 # How to use this repository
