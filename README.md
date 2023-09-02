@@ -50,7 +50,7 @@
 ### 2-1. [online] ansible-playbook -i inventory/<cluster-name>/hosts.yml --become --become-user=root remove-node.yml -e node=<NODE_NAME> -K
 ### 2-2. [unofficial] [offline] ansible-playbook -i inventory/<cluster-name>/hosts.yml --become --become-user=root remove-node.yml -e node=NODE_NAME -e reset_nodes=false -e allow_ungraceful_removal=true -K
 ### 3. inventory/<cluster-name>/hosts.yml에서 삭제된 노드 제거 & 새로 추가될 노드 명시(etcd 노드 수는 홀수가 되어야함)
-### 4. ansible-playbook -i inventory/<cluster-name>/hosts.yml --become --become-user=root cluster.yml -e ignore_assert_errors=yes -K
+### 4. [unstable] ansible-playbook -i inventory/<cluster-name>/hosts.yml --become --become-user=root cluster.yml -e ignore_assert_errors=yes -K
 ### 5. ansible-playbook -i inventory/<cluster-name>/hosts.yml --become --become-user=root upgrade-cluster.yml --limit=etcd,kube_control_plane -e ignore_assert_errors=yes -K
 ### 6. 모든 control plane 노드에서 /etc/kubernetes/manifests/kube-apiserver.yaml 안의 --etcd-servers 파라미터에 새로운 etcd 서버아이피 명시
 -------------------------------
