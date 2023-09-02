@@ -7,7 +7,7 @@
 -------------------------------
 # How to use this repository
 -------------------------------
-### * Please remind that removal command of offlined node doesn't work on ubuntu 22.04.
+### * Please remind that removal command of offlined node is quite unstable. When the progress get stuck if you run the command, type it again.
 ### 1. install k8s and setup one master node using bootstrap.sh
 ### 2. run 'add_node.sh' before adding a new node into the cluster 
 ### 3. 'ssh-copy-id "remote-user"@"ip-of-new-node"'
