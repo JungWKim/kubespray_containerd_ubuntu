@@ -9,8 +9,6 @@
 IP=
 CURRENT_DIR=$PWD
 
-sudo docker login
-
 # prerequisite
 cd ~
 
