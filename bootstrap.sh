@@ -45,6 +45,10 @@ cp -rfp inventory/sample inventory/mycluster
 declare -a IPS=(${IP})
 CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
 
+# change kube_proxy_mode to iptables
+sed -i "s/kube_proxy_mode: ipvs/kube_proxy_mode: iptables/g" roles/kubespray-defaults/defaults/main.yaml
+sed -i "s/kube_proxy_mode: ipvs/kube_proxy_mode: iptables/g" inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml
+
 # change network plugin as flannel
 sed -i "s/kube_network_plugin: calico/kube_network_plugin: flannel/g" roles/kubespray-defaults/defaults/main.yaml
 sed -i "s/kube_network_plugin: calico/kube_network_plugin: flannel/g" inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml
