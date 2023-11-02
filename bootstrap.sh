@@ -83,3 +83,10 @@ sudo chown ${USER}:${USER} ${HOME}/.kube/config
 # create sa and clusterrolebinding of dashboard to get cluster-admin token
 kubectl apply -f ${CURRENT_DIR}/sa.yaml
 kubectl apply -f ${CURRENT_DIR}/clusterrolebinding.yaml
+
+# download nerdctl zip file
+cd ${HOME}
+wget https://github.com/containerd/nerdctl/releases/download/v1.6.2/nerdctl-full-1.6.2-linux-amd64.tar.gz
+
+# install nerdctl
+tar Cxzvvf /usr/local nerdctl-full-1.6.2-linux-amd64.tar.gz
